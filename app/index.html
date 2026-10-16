@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#58cc02">
+  <meta name="description" content="轻量、本地优先的英语词汇学习工具">
+  <link rel="manifest" href="manifest.webmanifest?v=5">
+  <link rel="icon" href="assets/favicon-v5.ico?v=5" type="image/vnd.microsoft.icon" sizes="16x16 20x20 24x24 30x30 32x32 36x36 40x40 48x48 60x60 64x64 72x72 96x96 128x128 256x256">
+  <link rel="icon" href="assets/icons/app-icon-32.png?v=5" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/icons/app-icon-48.png?v=5" type="image/png" sizes="48x48">
+  <link rel="icon" href="assets/icons/app-icon-96.png?v=5" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon-192.png?v=5" sizes="192x192">
+  <link rel="stylesheet" href="styles.css?v=78">
+  <link rel="stylesheet" href="ambient.css?v=13">
+  <link rel="stylesheet" href="academic-categories.css?v=3">
+  <link rel="stylesheet" href="content-moves.css?v=1">
+  <link rel="stylesheet" href="daily-groups.css?v=3">
+  <title>My Vocabulary / 我的词汇本</title>
+</head>
+<body>
+  <div class="ambient-backdrop" aria-hidden="true"></div>
+  <header class="brandbar">
+    <a href="#today" class="brand" aria-label="返回今日">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5c3.1-.8 5.7-.2 8 1.5v13c-2.3-1.7-4.9-2.3-8-1.5v-13Zm17 0c-3.1-.8-5.7-.2-8 1.5v13c2.3-1.7 4.9-2.3 8-1.5v-13Z"/></svg>
+      <span>我的词汇本<small>my vocabulary</small></span>
+    </a>
+  <span class="local-badge"><i></i> 本地词库 · 自在学习</span></header>
+  <div class="shell">
+    <nav class="nav" aria-label="主要导航">
+      <a href="#today" data-route="today"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18M7 14h2m3 0h2m3 0h1M7 18h2m3 0h2"/></svg><span>今日学习</span></a>
+      <a href="#review" data-route="review"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg><span>复习</span></a>
+      <a href="#library" data-route="library"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="14" height="15" rx="2"/><path d="M11 3v15M17 21H5a2 2 0 0 1-2-2V8"/></svg><span>总词库</span></a>
+      <a href="#reading" data-route="reading"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5c3.1-.8 5.7-.2 8 1.5v13c-2.3-1.7-4.9-2.3-8-1.5v-13Zm16 0c-3.1-.8-5.7-.2-8 1.5v13c2.3-1.7 4.9-2.3 8-1.5v-13Z"/></svg><span>阅读写作</span></a>
+      <a href="#academic" data-route="academic"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-5 10 5-10 5L2 8Zm4 3v6c4 3 8 3 12 0v-6M22 8v8"/></svg><span>学术词汇</span></a>
+      <a href="#expressions" data-route="expressions"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-4.5 3v-3H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z"/><path d="M7 9h10M7 13h6"/></svg><span>阅读素材</span></a>
+      <a href="#daily" data-route="daily"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Zm12 1h2a3 3 0 0 1 0 6h-2M3 22h16M7 2v3m4-3v3"/></svg><span>生活口语</span></a>
+      <a href="#add" data-route="add"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 7v10M7 12h10"/></svg><span>添加</span></a>
+      <a href="#stats" data-route="stats"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11h4v9H5Zm6 0V4h4v16h-4Zm6 0v-6h4v6h-4Z"/></svg><span>统计</span></a>
+      <div class="nav-note"><strong>每天一小步</strong><p>学自己的词，<br>走自己的路。</p></div>
+    </nav>
+    <main id="app-main" tabindex="-1"><div class="loading">正在打开我的词汇本…</div></main>
+  </div>
+  <dialog id="dialog"><div id="dialog-body"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=100" type="module"></script>
+</body>
+</html>

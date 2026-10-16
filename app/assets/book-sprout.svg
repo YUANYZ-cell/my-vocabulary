@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 190" role="img" aria-labelledby="title">
+  <title id="title">抱着绿书的小芽</title>
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fffef9"/>
+      <stop offset="1" stop-color="#f2f6e8"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4c9d3c"/>
+      <stop offset="1" stop-color="#286b2e"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="122" cy="178" rx="85" ry="10" fill="#347d26" opacity=".18"/>
+  <path d="M122 51c1-17 5-26 15-34" fill="none" stroke="#347638" stroke-width="5" stroke-linecap="round"/>
+  <path d="M135 20c4-15 17-19 25-12 2 13-8 24-25 22Z" fill="#397d3c"/>
+  <path d="M134 34c-5-13-18-16-26-8-1 13 9 22 26 20Z" fill="#5a9b45"/>
+  <path d="M74 61c8-25 78-31 94-4 13 22 4 76-9 101-12 21-70 24-87 2-17-24-12-75 2-99Z" fill="url(#face)" stroke="#e4edd8" stroke-width="2"/>
+  <ellipse cx="98" cy="89" rx="4" ry="7" fill="#323a2e"/>
+  <ellipse cx="140" cy="89" rx="4" ry="7" fill="#323a2e"/>
+  <path d="M109 101c5 9 15 9 20 0" fill="none" stroke="#323a2e" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="83" cy="103" rx="10" ry="5" fill="#f0c8a9" opacity=".34"/>
+  <ellipse cx="155" cy="103" rx="10" ry="5" fill="#f0c8a9" opacity=".34"/>
+  <path d="M62 120c-21-2-31 13-25 28 5 12 19 13 32 8" fill="url(#face)" stroke="#e4edd8" stroke-width="2"/>
+  <path d="M171 120c20-4 32 10 29 26-2 13-17 17-32 12" fill="url(#face)" stroke="#e4edd8" stroke-width="2"/>
+  <path d="M42 123c29-8 55-5 76 7v49c-20-12-46-16-76-9Z" fill="url(#cover)" stroke="#2e6931" stroke-width="2"/>
+  <path d="M118 130c22-12 50-15 78-7v47c-28-7-54-3-78 9Z" fill="#398440" stroke="#2e6931" stroke-width="2"/>
+  <path d="M48 118c28-7 50-3 70 9v7c-20-13-42-17-70-10Z" fill="#fff9e8"/>
+  <path d="M118 127c22-12 45-16 72-9v7c-26-6-49-2-72 10Z" fill="#fff9e8"/>
+  <path d="M118 133v44" stroke="#d8e9b8" stroke-width="2"/>
+  <ellipse cx="42" cy="143" rx="10" ry="14" fill="url(#face)" stroke="#e4edd8" stroke-width="2"/>
+  <ellipse cx="194" cy="143" rx="10" ry="14" fill="url(#face)" stroke="#e4edd8" stroke-width="2"/>
+</svg>

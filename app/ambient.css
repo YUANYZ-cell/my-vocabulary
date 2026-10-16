@@ -1,0 +1,117 @@
+/* An anchored sprig in the encouragement note. */
+:root {
+  --canvas-base: #f8fbf5;
+  --chrome-line: rgba(207, 219, 201, .68);
+  view-transition-name: none;
+}
+body { background: var(--canvas-base); }
+/* Decorations belong to the frame's components, never to viewport coordinates. */
+.ambient-backdrop { display: none; }
+.shell { position: relative; z-index: 1; }
+.brandbar {
+  border-bottom-color: var(--chrome-line);
+  background-color: var(--canvas-base);
+  background-image: none;
+  box-shadow: 0 3px 16px rgba(68, 91, 49, .025);
+  backdrop-filter: none;
+}
+.nav {
+  border-right-color: var(--chrome-line);
+  background: transparent;
+}
+
+/* The growth motif lives inside the encouragement note, clear of its copy. */
+.nav-note p { padding-right: 36px; color: #61715f; }
+.nav-note::after {
+  right: 14px;
+  bottom: 15px;
+  width: 28px;
+  height: 38px;
+  border-radius: 0;
+  pointer-events: none;
+  background: url('assets/decor-sprig.svg') center / contain no-repeat;
+}
+
+/* One content transition; the surrounding desktop frame stays in place. */
+#app-main { view-transition-name: route-content; }
+.route-managed.page-enter,
+body[data-route="stats"] .route-managed.page-enter,
+.route-managed .path-step,
+.route-managed .learning-aside > section,
+.route-managed .review-studio,
+.route-managed .option-card,
+.route-managed .page-head,
+.route-managed .focus-note,
+body[data-route="stats"] .route-managed [data-enter],
+body[data-route="stats"] .route-managed .activity-grid .activity-cell { animation: none; }
+::view-transition { pointer-events: none; }
+::view-transition-group(route-content) { animation: none; }
+::view-transition-image-pair(route-content) { isolation: isolate; }
+::view-transition-old(route-content) { mix-blend-mode: normal; animation: routeOut 280ms cubic-bezier(.4, 0, .2, 1) both; }
+::view-transition-new(route-content) { mix-blend-mode: normal; animation: routeIn 360ms cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes routeOut { to { opacity: 0; transform: translateY(-5px); } }
+@keyframes routeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.brandbar::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, #9bbd7d, transparent);
+  transform: scaleX(.35);
+}
+.route-pending .brandbar::after { opacity: .65; animation: routePending 1.4s ease-in-out infinite; }
+@keyframes routePending { 0%, 100% { transform: scaleX(.35); opacity: .35; } 50% { transform: scaleX(.82); opacity: .7; } }
+
+/* First launch keeps the small heading unfold requested for refresh. */
+.page-enter, body[data-route="stats"] .page-enter { animation: ambientPageIn 440ms ease-out both; }
+.page-enter .page-head, body[data-route="stats"] .page-enter .page-head { animation: none; }
+.page-enter .focus-note { animation: ambientPageIn 540ms 70ms ease-out backwards; }
+.path-step { animation: ambientPageIn 540ms ease-out backwards; }
+.path-step:nth-child(2) { animation-delay: 65ms; }
+.path-step:nth-child(3) { animation-delay: 130ms; }
+@keyframes ambientPageIn { from { opacity: .35; } to { opacity: 1; } }
+.fold-visual { white-space: inherit; }
+.fold-segment { display: inline-block; perspective: 700px; vertical-align: baseline; }
+.fold-piece {
+  position: relative;
+  display: inline-block;
+  transform-origin: 50% 0%;
+  backface-visibility: hidden;
+}
+.fold-piece::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(33,51,26,.15), transparent 80%);
+  animation: foldCrease 580ms var(--fold-delay) ease-out both;
+}
+@keyframes foldCrease { from { opacity: .7; } to { opacity: 0; } }
+
+/* Bubble-like response without moving adjacent controls or hiding their labels. */
+.btn:not(:disabled) { transition-duration: 230ms; transition-timing-function: cubic-bezier(.2,.8,.2,1); }
+.btn.primary:not(:disabled):hover, .btn.home-action:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 13px rgba(61,101,39,.09);
+}
+.btn:not(:disabled):active { transform: translateY(1px) scale(.985); }
+.nav a:hover .nav-icon { transform: translateY(-1px) rotate(-4deg) scale(1.045); }
+.daily-favorite { transition: color 200ms ease, background 200ms ease, transform 260ms cubic-bezier(.2,.8,.2,1); }
+.daily-favorite:hover { transform: rotate(-6deg) scale(1.08); }
+.daily-favorite:active { transform: scale(.94); }
+.btn.danger:hover { box-shadow: 0 4px 12px rgba(180,35,24,.1); }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(route-content), ::view-transition-old(route-content),
+  ::view-transition-new(route-content), .route-pending .brandbar::after { animation: none; }
+  .page-enter, body[data-route="stats"] .page-enter,
+  .page-enter .focus-note, .path-step, .fold-piece::after { animation: none; }
+  .btn, .daily-favorite { transition: none; }
+  .btn.primary:not(:disabled):hover, .btn.home-action:not(:disabled):hover,
+  .btn:not(:disabled):active, .nav a:hover .nav-icon,
+  .daily-favorite:hover, .daily-favorite:active { transform: none; }
+}
